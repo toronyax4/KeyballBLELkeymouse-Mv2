@@ -9,11 +9,6 @@
 #define SCROLL 5
 #define NUM 6
 
-&mt {
-    flavor = "balanced";
-    tapping-term-ms = <280>;   // ← まずは 260〜300 で試す（おすすめ 280）
-    quick-tap-ms = <0>;
-};
 
 &lt {
     flavor = "balanced";
