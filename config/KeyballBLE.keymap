@@ -48,81 +48,87 @@
         };
     };
 
-    behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo &to_layer_0>;
+behaviors {
+    lt_to_layer_0: lt_to_layer_0 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "LAYER_TAP_TO_0";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <0>;
+        flavor = "balanced";
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
-        ROTATE: ROTATE {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "ROTATE";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc &msc>;
-
-            tap-ms = <20>;
-        };
-
-        mclk_or_scroll: mclk_or_scroll {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MCLK_OR_SCROLL";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            bindings = <&mo &mkp>;
-        };
-
-        rc_or_mclk: rc_or_mclk {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RC_OR_MCLK";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            bindings = <&mkp &mkp>;
-        };
-
-        win_minus_under: win_minus_under {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WIN_MINUS_UNDER";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS &kp LS(INT1)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        win_plus_equal: win_plus_equal {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WIN_PLUS_EQUAL";
-            #binding-cells = <0>;
-            bindings = <&kp LS(SEMI) &kp LS(MINUS)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-win_layer4_plus_equal: win_layer4_plus_equal {
-    compatible = "zmk,behavior-hold-tap";
-    label = "WIN_L4_PLUS_EQUAL";
-    #binding-cells = <0>;
-
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <0>;
-
-    bindings = <&mo 4 &win_plus_equal>;
-};
-
-        win_colon_semi: win_colon_semi {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WIN_COLON_SEMI";
-            #binding-cells = <0>;
-            bindings = <&kp SQT &kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        bindings = <&mo>, <&to_layer_0>;
     };
+
+    ROTATE: ROTATE {
+        compatible = "zmk,behavior-sensor-rotate-var";
+        label = "ROTATE";
+        #sensor-binding-cells = <2>;
+
+        bindings = <&msc>, <&msc>;
+        tap-ms = <20>;
+    };
+
+    mclk_or_scroll: mclk_or_scroll {
+        compatible = "zmk,behavior-hold-tap";
+        label = "MCLK_OR_SCROLL";
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <0>;
+
+        bindings = <&mo>, <&mkp>;
+    };
+
+    rc_or_mclk: rc_or_mclk {
+        compatible = "zmk,behavior-hold-tap";
+        label = "RC_OR_MCLK";
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <0>;
+
+        bindings = <&mkp>, <&mkp>;
+    };
+
+    win_minus_under: win_minus_under {
+        compatible = "zmk,behavior-mod-morph";
+        label = "WIN_MINUS_UNDER";
+        #binding-cells = <0>;
+
+        bindings = <&kp MINUS>, <&kp LS(INT1)>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    win_plus_equal: win_plus_equal {
+        compatible = "zmk,behavior-mod-morph";
+        label = "WIN_PLUS_EQUAL";
+        #binding-cells = <0>;
+
+        bindings = <&kp LS(SEMI)>, <&kp LS(MINUS)>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    win_colon_semi: win_colon_semi {
+        compatible = "zmk,behavior-mod-morph";
+        label = "WIN_COLON_SEMI";
+        #binding-cells = <0>;
+
+        bindings = <&kp SQT>, <&kp SEMI>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    win_layer4_plus_equal: win_layer4_plus_equal {
+        compatible = "zmk,behavior-hold-tap";
+        label = "WIN_L4_PLUS_EQUAL";
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <280>;
+        quick-tap-ms = <0>;
+
+        bindings = <&mo>, <&win_plus_equal>;
+    };
+};
 
     keymap {
         compatible = "zmk,keymap";
@@ -140,10 +146,10 @@ win_layer4_plus_equal: win_layer4_plus_equal {
 
         layer_1 {
             bindings = <
-&kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P                   &win_minus_under
-&kp TAB     &lt 4 A   &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LG(TAB)  &kp H        &kp J  &kp K      &kp L    &win_layer4_plus_equal  &win_colon_semi
-&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &kp LS(LA(TAB))           &kp LA(TAB)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH               &mt RSHFT LBKT
-&kp LCTRL   &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE  &lt 2 INT5                &lt 2 INT4   &lt 3 ENTER                             &kp RALT                &mt LCTRL RBKT
+&kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P                     &win_minus_under
+&kp TAB     &lt 4 A   &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LG(TAB)  &kp H        &kp J  &kp K      &kp L    &win_layer4_plus_equal 4  &win_colon_semi
+&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &kp LS(LA(TAB))           &kp LA(TAB)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH                 &mt RSHFT LBKT
+&kp LCTRL   &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE  &lt 2 INT5                &lt 2 INT4   &lt 3 ENTER                             &kp RALT                  &mt LCTRL RBKT
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
