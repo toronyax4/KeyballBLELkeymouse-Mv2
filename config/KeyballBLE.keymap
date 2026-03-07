@@ -9,7 +9,6 @@
 #define SCROLL 5
 #define NUM 6
 
-
 &mt {
     flavor = "balanced";
     tapping-term-ms = <280>;
@@ -110,18 +109,6 @@
             #binding-cells = <0>;
             bindings = <&kp SQT &kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        win_layer4_plus_equal: win_layer4_plus_equal {
-            compatible = "zmk,behavior-hold-tap";
-            label = "WIN_L4_PLUS_EQUAL";
-            #binding-cells = <2>;
-
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-
-            bindings = <&mo 4 &win_plus_equal>;
         };
     };
 
