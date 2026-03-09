@@ -100,14 +100,14 @@ behaviors {
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
-    win_plus_equal: win_plus_equal {
-        compatible = "zmk,behavior-mod-morph";
-        label = "WIN_PLUS_EQUAL";
-        #binding-cells = <0>;
+        win_plus_equal: win_plus_equal {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WIN_PLUS_EQUAL";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SEMI)>, <&kp LS(MINUS)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
-        bindings = <&kp LS(SEMI)>, <&kp LS(MINUS)>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
 
     win_colon_semi: win_colon_semi {
         compatible = "zmk,behavior-mod-morph";
@@ -118,16 +118,17 @@ behaviors {
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
-    win_layer4_plus_equal: win_layer4_plus_equal {
-        compatible = "zmk,behavior-hold-tap";
-        label = "WIN_L4_PLUS_EQUAL";
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <280>;
-        quick-tap-ms = <0>;
+        win_layer4_plus_equal: win_layer4_plus_equal {
+            compatible = "zmk,behavior-hold-tap";
+            label = "WIN_L4_PLUS_EQUAL";
+            #binding-cells = <2>;
 
-        bindings = <&mo>, <&win_plus_equal>;
-    };
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <0>;
+
+            bindings = <&mo>, <&win_plus_equal>;
+        };
 };
 
     keymap {
@@ -147,9 +148,9 @@ behaviors {
 layer_1 {
     bindings = <
 &kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P            &win_minus_under
-&kp TAB     &lt 4 A   &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LG(TAB)  &kp H        &kp J  &kp K      &kp L    &lt 4 EQUAL      &kp SEMI
-&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &kp LS(LA(TAB))           &kp LA(TAB)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH        &mt RSHFT LBKT
-&kp LCTRL   &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE  &lt 2 INT5                &lt 2 INT4   &lt 3 ENTER                             &kp RALT         &mt LGUI RBKT
+&kp TAB     &lt 4 A   &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LG(TAB)  &kp H        &kp J  &kp K      &kp L    &win_layer4_plus_equal 4 0     &win_colon_semi
+&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &kp LS(LA(TAB))           &kp LA(TAB)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH        &mt RSHFT RBKT
+&kp LCTRL   &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE  &lt 2 INT5                &lt 2 INT4   &lt 3 ENTER                             &kp RALT         &mt LGUI BSLH
             >;
 
     sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
