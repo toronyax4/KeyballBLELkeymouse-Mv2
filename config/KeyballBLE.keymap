@@ -13,7 +13,7 @@
     zmk_pointing {
         compatible = "zmk,pointing";
         motion-acceleration = <0>;
-        motion-speed = <3>;
+        motion-speed = <1>;
     };
 };
 
