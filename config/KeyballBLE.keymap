@@ -9,6 +9,14 @@
 #define SCROLL 5
 #define NUM 6
 
+/ {
+    zmk_pointing {
+        compatible = "zmk,pointing";
+        motion-acceleration = <0>;
+        motion-speed = <3>;
+    };
+};
+
 &mt {
     flavor = "balanced";
     tapping-term-ms = <350>;
