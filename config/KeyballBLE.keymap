@@ -197,16 +197,16 @@ layer_1 {
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
 
-        layer_5 {
-            bindings = <
+layer_5 {
+    bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                            &kp HOME   &mkp MB4  &kp UP_ARROW    &kp PAGE_UP    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans     &none     &mo 8           &mkp MB2       &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans     &none     &mkp MB1        &mclk_or_scroll 8 MB2  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &kp END    &mkp MB5  &kp DOWN_ARROW  &kp PAGE_DOWN  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp RIGHT_ARROW                                     &trans  &trans
             >;
 
-            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
-        };
+    sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+};
 
         layer_6 {
             bindings = <
