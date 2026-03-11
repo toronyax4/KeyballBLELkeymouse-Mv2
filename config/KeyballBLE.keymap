@@ -200,7 +200,7 @@ layer_1 {
         layer_5 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                            &kp HOME   &mkp MB4  &kp UP_ARROW    &kp PAGE_UP    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans     &none     &mkp MB1        &mkp MB2       &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans     &none     &mo 8           &mkp MB2       &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &kp END    &mkp MB5  &kp DOWN_ARROW  &kp PAGE_DOWN  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp RIGHT_ARROW                                     &trans  &trans
             >;
@@ -223,6 +223,17 @@ layer_1 {
 &trans  &kp EXCL  &kp LS(N2)  &kp HASH  &kp DLLR   &kp BSPC  &trans    &trans  &kp DEL  &kp PERCENT  &kp LS(N6)     &kp LS(N7)    &kp LBKT     &kp LS(EQUAL)
 &trans  &trans    &trans   &trans    &kp LS(LBKT) &trans    &trans    &trans  &trans   &kp EQUAL    &kp LS(INT3)    &kp KP_MULTIPLY  &kp LS(INT1)  &kp LS(N8)
 &trans  &trans    &trans   &trans    &trans     &trans    &trans    &trans  &trans                                             &trans       &kp LS(N9)
+            >;
+
+    sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+};
+
+layer_8 {
+    bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans  &trans
             >;
 
     sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
