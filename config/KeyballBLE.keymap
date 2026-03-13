@@ -47,14 +47,25 @@
         };
     };
 
-    macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
+macros {
+    to_layer_0: to_layer_0 {
+        compatible = "zmk,behavior-macro-one-param";
+        #binding-cells = <1>;
+        bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+        label = "TO_LAYER_0";
     };
+
+    browser_zoom_in_wheel: browser_zoom_in_wheel {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        label = "BROWSER_ZOOM_IN_WHEEL";
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_tap &kp C_AC_SCROLL_UP>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+};
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
@@ -111,6 +122,15 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+win_plus_equal_browserfix: win_plus_equal_browserfix {
+    compatible = "zmk,behavior-mod-morph";
+    label = "WIN_PLUS_EQUAL_BROWSERFIX";
+    #binding-cells = <0>;
+
+    bindings = <&win_plus_equal>, <&browser_zoom_in_wheel>;
+    mods = <(MOD_LCTL|MOD_RCTL)>;
+};
+
         win_colon_semi: win_colon_semi {
             compatible = "zmk,behavior-mod-morph";
             label = "WIN_COLON_SEMI";
@@ -126,7 +146,7 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <0>;
-            bindings = <&mo>, <&win_plus_equal>;
+            bindings = <&mo>, <&win_plus_equal_browserfix>;
         };
     };
 
