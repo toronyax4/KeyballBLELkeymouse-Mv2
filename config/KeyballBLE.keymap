@@ -152,7 +152,7 @@ win_plus_equal_browserfix: win_plus_equal_browserfix {
     label = "WIN_PLUS_EQUAL_BROWSERFIX";
     #binding-cells = <0>;
 
-    bindings = <&win_plus_equal>, <&kp KP_PLUS>;
+    bindings = <&win_plus_equal>, <&kp EQUAL>;
     mods = <(MOD_LCTL|MOD_RCTL)>;
 };
 };
