@@ -146,15 +146,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-win_plus_equal_browserfix: win_plus_equal_browserfix {
-    compatible = "zmk,behavior-mod-morph";
-    label = "WIN_PLUS_EQUAL_BROWSERFIX";
-    #binding-cells = <0>;
-
-    bindings = <&win_plus_equal>, <&browser_zoom_in_wheel>;
-    mods = <(MOD_LCTL|MOD_RCTL)>;
-};
-
         win_colon_semi: win_colon_semi {
             compatible = "zmk,behavior-mod-morph";
             label = "WIN_COLON_SEMI";
@@ -163,15 +154,15 @@ win_plus_equal_browserfix: win_plus_equal_browserfix {
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        win_layer4_plus_equal: win_layer4_plus_equal {
-            compatible = "zmk,behavior-hold-tap";
-            label = "WIN_L4_PLUS_EQUAL";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            quick-tap-ms = <0>;
-            bindings = <&mo>, <&win_plus_equal_browserfix>;
-        };
+win_layer4_plus_equal: win_layer4_plus_equal {
+    compatible = "zmk,behavior-hold-tap";
+    label = "WIN_L4_PLUS_EQUAL";
+    #binding-cells = <2>;
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <0>;
+    bindings = <&mo>, <&win_plus_equal>;
+};
     };
 
     keymap {
