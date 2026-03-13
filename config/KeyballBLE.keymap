@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120    // default: 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -56,103 +56,52 @@
         };
     };
 
-        browser_zoom_in_wheel: browser_zoom_in_wheel {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "BROWSER_ZOOM_IN_WHEEL";
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &msc SCRL_UP>
-                , <&macro_release &kp LCTRL>
-                ;
-        };
-    };
-
-        browser_zoom_in: browser_zoom_in {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "BROWSER_ZOOM_IN";
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp EQUAL>
-                , <&macro_release &kp LCTRL>
-                ;
+    behaviors {
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&mo>, <&to_layer_0>;
         };
 
-        browser_zoom_out: browser_zoom_out {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "BROWSER_ZOOM_OUT";
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp MINUS>
-                , <&macro_release &kp LCTRL>
-                ;
+        ROTATE: ROTATE {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "ROTATE";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+            tap-ms = <20>;
         };
 
-        browser_zoom_reset: browser_zoom_reset {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "BROWSER_ZOOM_RESET";
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp N0>
-                , <&macro_release &kp LCTRL>
-                ;
+        mclk_or_scroll: mclk_or_scroll {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MCLK_OR_SCROLL";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&mkp>;
         };
 
-behaviors {
-    lt_to_layer_0: lt_to_layer_0 {
-        compatible = "zmk,behavior-hold-tap";
-        label = "LAYER_TAP_TO_0";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <0>;
-        flavor = "balanced";
+        rc_or_mclk: rc_or_mclk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RC_OR_MCLK";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&mkp>, <&mkp>;
+        };
 
-        bindings = <&mo>, <&to_layer_0>;
-    };
-
-    ROTATE: ROTATE {
-        compatible = "zmk,behavior-sensor-rotate-var";
-        label = "ROTATE";
-        #sensor-binding-cells = <2>;
-
-        bindings = <&msc>, <&msc>;
-        tap-ms = <20>;
-    };
-
-    mclk_or_scroll: mclk_or_scroll {
-        compatible = "zmk,behavior-hold-tap";
-        label = "MCLK_OR_SCROLL";
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <0>;
-
-        bindings = <&mo>, <&mkp>;
-    };
-
-    rc_or_mclk: rc_or_mclk {
-        compatible = "zmk,behavior-hold-tap";
-        label = "RC_OR_MCLK";
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <0>;
-
-        bindings = <&mkp>, <&mkp>;
-    };
-
-    win_minus_under: win_minus_under {
-        compatible = "zmk,behavior-mod-morph";
-        label = "WIN_MINUS_UNDER";
-        #binding-cells = <0>;
-
-        bindings = <&kp MINUS>, <&kp LS(INT1)>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-
+        win_minus_under: win_minus_under {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WIN_MINUS_UNDER";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp LS(INT1)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
         win_plus_equal: win_plus_equal {
             compatible = "zmk,behavior-mod-morph";
@@ -162,28 +111,24 @@ behaviors {
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-
-    win_colon_semi: win_colon_semi {
-        compatible = "zmk,behavior-mod-morph";
-        label = "WIN_COLON_SEMI";
-        #binding-cells = <0>;
-
-        bindings = <&kp SQT>, <&kp SEMI>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
+        win_colon_semi: win_colon_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WIN_COLON_SEMI";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
         win_layer4_plus_equal: win_layer4_plus_equal {
             compatible = "zmk,behavior-hold-tap";
             label = "WIN_L4_PLUS_EQUAL";
             #binding-cells = <2>;
-
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <0>;
-
             bindings = <&mo>, <&win_plus_equal>;
         };
-};
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -191,24 +136,24 @@ behaviors {
         default_layer {
             bindings = <
 &kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                                 &kp Y        &kp U  &kp I      &kp O    &kp P        &kp MINUS
-&kp TAB     &lt 4 A   &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LC(UP)     &kp H        &kp J  &kp K      &kp L    &lt 4 EQUAL  &kp SEMI
+&kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LC(UP)     &kp H        &kp J  &kp K      &kp L    &lt 4 EQUAL  &kp SEMI
 &kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &kp LC(LEFT)              &kp LC(RIGHT)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH    &mt RSHFT LBKT
-&kp LGUI    &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE  &lt 2 LANG2               &lt 2 LANG1    &lt 3 ENTER                             &kp RALT     &mt LGUI RBKT
+&kp LGUI    &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE   &lt 2 LANG2                 &lt 2 LANG1      &lt 3 ENTER                             &kp RALT     &mt LGUI RBKT
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
 
-layer_1 {
-    bindings = <
+        layer_1 {
+            bindings = <
 &kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P            &win_minus_under
-&kp TAB     &lt 4 A   &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LG(TAB)  &kp H        &kp J  &kp K      &kp L    &win_layer4_plus_equal 4 0     &win_colon_semi
-&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &kp LS(LA(TAB))           &kp LA(TAB)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH        &mt RSHFT RBKT
-&kp LCTRL   &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE  &lt 7 INT5                &lt 7 INT4   &lt 3 ENTER                             &kp RALT         &mt LCTRL BSLH
+&kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LG(TAB)   &kp H        &kp J  &kp K      &kp L    &win_layer4_plus_equal 4 0  &win_colon_semi
+&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &kp LS(LA(TAB))           &kp LA(TAB)   &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH        &mt RSHFT RBKT
+&kp LCTRL   &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE   &lt 7 INT5                  &lt 7 INT4      &lt 3 ENTER                             &kp RALT         &mt LCTRL BSLH
             >;
 
-    sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
-};
+            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+        };
 
         layer_2 {
             bindings = <
@@ -243,16 +188,16 @@ layer_1 {
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
 
-layer_5 {
-    bindings = <
+        layer_5 {
+            bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                            &kp HOME   &mkp MB4  &kp UP_ARROW    &kp PAGE_UP    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans     &none     &mkp MB1        &mclk_or_scroll 8 MB2  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &kp END    &mkp MB5  &kp DOWN_ARROW  &kp PAGE_DOWN  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp RIGHT_ARROW                                     &trans  &trans
             >;
 
-    sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
-};
+            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+        };
 
         layer_6 {
             bindings = <
@@ -265,24 +210,24 @@ layer_5 {
 
         layer_7 {
             bindings = <
-&trans  &trans    &trans   &trans    &trans     &trans                      &trans   &trans       &trans         &trans        &trans       &trans
-&trans  &kp EXCL  &kp LS(N2)  &kp HASH  &kp DLLR   &kp BSPC  &trans    &trans  &kp DEL  &kp PERCENT  &kp LS(N6)     &kp LS(N7)    &kp LBKT     &kp LS(EQUAL)
-&trans  &trans    &trans   &trans    &kp LS(LBKT) &trans    &trans    &trans  &trans   &kp EQUAL    &kp LS(INT3)    &kp KP_MULTIPLY  &kp LS(INT1)  &kp LS(N8)
-&trans  &trans    &trans   &trans    &trans     &trans    &trans    &trans  &trans                                             &trans       &kp LS(N9)
+&trans  &trans      &trans      &trans    &trans       &trans                      &trans   &trans       &trans         &trans        &trans          &trans
+&trans  &kp EXCL    &kp LS(N2)  &kp HASH  &kp DLLR     &kp BSPC  &trans    &trans  &kp DEL  &kp PERCENT  &kp LS(N6)     &kp LS(N7)    &kp LBKT       &kp LS(EQUAL)
+&trans  &trans      &trans      &trans    &kp LS(LBKT) &trans    &trans    &trans  &trans   &kp EQUAL    &kp LS(INT3)   &kp KP_MULTIPLY  &kp LS(INT1)  &kp LS(N8)
+&trans  &trans      &trans      &trans    &trans       &trans    &trans    &trans  &trans                                                     &trans         &kp LS(N9)
             >;
 
-    sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
-};
+            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+        };
 
-layer_8 {
-    bindings = <
+        layer_8 {
+            bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans  &trans
             >;
 
-    sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
-};
+            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+        };
     };
 };
