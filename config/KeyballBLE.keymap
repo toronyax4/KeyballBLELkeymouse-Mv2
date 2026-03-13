@@ -47,25 +47,49 @@
         };
     };
 
-macros {
-    to_layer_0: to_layer_0 {
-        compatible = "zmk,behavior-macro-one-param";
-        #binding-cells = <1>;
-        bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-        label = "TO_LAYER_0";
-    };
+    macros {
+        to_layer_0: to_layer_0 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
+        };
 
-    browser_zoom_in_wheel: browser_zoom_in_wheel {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        label = "BROWSER_ZOOM_IN_WHEEL";
-        bindings
-            = <&macro_press &kp LCTRL>
-            , <&macro_tap &kp C_AC_SCROLL_UP>
-            , <&macro_release &kp LCTRL>
-            ;
+        browser_zoom_in_strict: browser_zoom_in_strict {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "BROWSER_ZOOM_IN_STRICT";
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp EQUAL>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        browser_zoom_out: browser_zoom_out {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "BROWSER_ZOOM_OUT";
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp MINUS>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        browser_zoom_reset: browser_zoom_reset {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "BROWSER_ZOOM_RESET";
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp N0>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
     };
-};
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
@@ -199,10 +223,10 @@ win_plus_equal_browserfix: win_plus_equal_browserfix {
 
         layer_4 {
             bindings = <
-&trans  &trans  &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans                              &kp HOME        &mkp MB4        &kp UP_ARROW    &kp PAGE_UP             &trans  &trans
-&trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp BSPC  &trans    &trans          &kp DEL         &none           &mkp MB1        &mclk_or_scroll 5 MB2  &trans  &trans
-&trans  &trans  &kp END         &trans          &kp PAGE_DOWN    &trans    &trans    &trans          &kp END         &mkp MB5        &kp DOWN_ARROW  &kp PAGE_DOWN           &trans  &trans
-&trans  &trans  &trans          &trans          &trans           &trans    &trans    &kp LEFT_ARROW  &kp RIGHT_ARROW                                                         &trans  &trans
+&browser_zoom_in_strict  &browser_zoom_out  &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans                              &kp HOME        &mkp MB4        &kp UP_ARROW    &kp PAGE_UP             &trans  &trans
+&browser_zoom_reset      &trans             &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp BSPC  &trans    &trans          &kp DEL         &none           &mkp MB1        &mclk_or_scroll 5 MB2  &trans  &trans
+&trans                   &trans             &kp END         &trans          &kp PAGE_DOWN    &trans    &trans    &trans          &kp END         &mkp MB5        &kp DOWN_ARROW  &kp PAGE_DOWN           &trans  &trans
+&trans                   &trans             &trans          &trans          &trans           &trans    &trans    &kp LEFT_ARROW  &kp RIGHT_ARROW                                                         &trans  &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
