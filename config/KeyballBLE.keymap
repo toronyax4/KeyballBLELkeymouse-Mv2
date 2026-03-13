@@ -54,6 +54,7 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+    };
 
         browser_zoom_in_wheel: browser_zoom_in_wheel {
             compatible = "zmk,behavior-macro";
@@ -151,14 +152,6 @@ behaviors {
         bindings = <&kp MINUS>, <&kp LS(INT1)>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-win_plus_equal_ctrlfix: win_plus_equal_ctrlfix {
-    compatible = "zmk,behavior-mod-morph";
-    label = "WIN_PLUS_EQUAL_CTRLFIX";
-    #binding-cells = <0>;
-
-    bindings = <&win_plus_equal>, <&kp EQUAL>;
-    mods = <(MOD_LCTL|MOD_RCTL)>;
-};
 
 
         win_plus_equal: win_plus_equal {
@@ -188,25 +181,7 @@ win_plus_equal_ctrlfix: win_plus_equal_ctrlfix {
             tapping-term-ms = <280>;
             quick-tap-ms = <0>;
 
-            bindings = <&mo>, <&win_plus_equal_browserfix>;
-        };
-
-win_plus_equal_browserfix: win_plus_equal_browserfix {
-    compatible = "zmk,behavior-mod-morph";
-    label = "WIN_PLUS_EQUAL_BROWSERFIX";
-    #binding-cells = <0>;
-
-    bindings = <&win_plus_equal>, <&kp EQUAL>;
-    mods = <(MOD_LCTL|MOD_RCTL)>;
-};
-
-        win_plus_equal_browserfix: win_plus_equal_browserfix {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WIN_PLUS_EQUAL_BROWSERFIX";
-            #binding-cells = <0>;
-
-            bindings = <&win_plus_equal>, <&browser_zoom_in_wheel>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
+            bindings = <&mo>, <&win_plus_equal>;
         };
 };
 
@@ -259,10 +234,10 @@ layer_1 {
 
         layer_4 {
             bindings = <
-&browser_zoom_in     &trans  &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans                              &kp HOME        &mkp MB4        &kp UP_ARROW    &kp PAGE_UP             &trans  &trans
-&browser_zoom_out    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp BSPC  &trans    &trans          &kp DEL         &none           &mkp MB1        &mclk_or_scroll 5 MB2  &trans  &trans
-&browser_zoom_reset  &trans  &kp END         &trans          &kp PAGE_DOWN    &trans    &trans    &trans          &kp END         &mkp MB5        &kp DOWN_ARROW  &kp PAGE_DOWN           &trans  &trans
-&trans               &trans  &trans          &trans          &trans           &trans    &trans    &kp LEFT_ARROW  &kp RIGHT_ARROW                                                         &trans  &trans
+&trans  &trans  &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans                              &kp HOME        &mkp MB4        &kp UP_ARROW    &kp PAGE_UP             &trans  &trans
+&trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp BSPC  &trans    &trans          &kp DEL         &none           &mkp MB1        &mclk_or_scroll 5 MB2  &trans  &trans
+&trans  &trans  &kp END         &trans          &kp PAGE_DOWN    &trans    &trans    &trans          &kp END         &mkp MB5        &kp DOWN_ARROW  &kp PAGE_DOWN           &trans  &trans
+&trans  &trans  &trans          &trans          &trans           &trans    &trans    &kp LEFT_ARROW  &kp RIGHT_ARROW                                                         &trans  &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
