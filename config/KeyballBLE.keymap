@@ -152,6 +152,19 @@
                 , <&macro_release &kp LGUI>
                 ;
         };
+
+        win_screenshot_tool: win_screenshot_tool {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "WIN_SCREENSHOT_TOOL";
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LGUI>
+                ;
+        };
     };
 
     behaviors {
@@ -308,10 +321,10 @@ win_layer4_plus_equal: win_layer4_plus_equal {
 
         layer_7 {
             bindings = <
-&trans  &trans      &trans      &trans    &trans       &trans                      &trans   &trans       &trans         &trans        &trans          &trans
-&trans  &kp EXCL    &kp LS(N2)  &kp HASH  &kp DLLR     &kp BSPC  &trans    &trans  &kp DEL  &kp PERCENT  &kp LS(N6)     &kp LS(N7)    &kp LBKT       &kp LS(EQUAL)
-&trans  &trans      &trans      &trans    &kp LS(LBKT) &trans    &trans    &trans  &trans   &kp EQUAL    &kp LS(INT3)   &kp KP_MULTIPLY  &kp LS(INT1)  &kp LS(N8)
-&trans  &trans      &trans      &trans    &trans       &trans    &trans    &trans  &trans                                                     &trans         &kp LS(N9)
+&trans  &trans      &trans      &trans    &trans       &trans                      &trans   &trans       &trans         &trans           &win_screenshot_tool  &trans
+&trans  &kp EXCL    &kp LS(N2)  &kp HASH  &kp DLLR     &kp BSPC  &trans    &trans  &kp DEL  &kp PERCENT  &kp LS(N6)     &kp LS(N7)       &kp LBKT              &kp LS(EQUAL)
+&trans  &trans      &trans      &trans    &kp LS(LBKT) &trans    &trans    &trans  &trans   &kp EQUAL    &kp LS(INT3)   &kp KP_MULTIPLY  &kp LS(INT1)          &kp LS(N8)
+&trans  &trans      &trans      &trans    &trans       &trans    &trans    &trans  &trans                                                &trans                &kp LS(N9)
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
