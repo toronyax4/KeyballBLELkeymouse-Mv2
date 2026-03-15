@@ -115,6 +115,19 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
+
+        mac_screenshot_tool: mac_screenshot_tool {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "MAC_SCREENSHOT_TOOL";
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_press &kp LGUI>
+                , <&macro_tap &kp N5>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
     };
 
     behaviors {
@@ -218,10 +231,10 @@ win_layer4_plus_equal: win_layer4_plus_equal {
 
         layer_2 {
             bindings = <
-&trans  &trans    &trans   &trans    &trans     &trans                      &trans   &trans       &trans         &trans        &trans       &trans
-&trans  &kp EXCL  &kp DQT  &kp HASH  &kp DLLR   &kp BSPC  &trans    &trans  &kp DEL  &kp PERCENT  &kp AMPERSAND  &kp SQT       &kp AT_SIGN  &kp TILDE
-&trans  &trans    &trans   &trans    &kp GRAVE  &trans    &trans    &trans  &trans   &kp CARET    &kp PIPE       &kp ASTERISK  &kp UNDER    &kp LEFT_PARENTHESIS
-&trans  &trans    &trans   &trans    &trans     &trans    &trans    &trans  &trans                                             &trans       &kp RIGHT_PARENTHESIS
+&trans  &trans    &trans   &trans    &trans     &trans                      &trans   &trans       &trans         &trans        &mac_screenshot_tool    &trans
+&trans  &kp EXCL  &kp DQT  &kp HASH  &kp DLLR   &kp BSPC  &trans    &trans  &kp DEL  &kp PERCENT  &kp AMPERSAND  &kp SQT       &kp AT_SIGN             &kp TILDE
+&trans  &trans    &trans   &trans    &kp GRAVE  &trans    &trans    &trans  &trans   &kp CARET    &kp PIPE       &kp ASTERISK  &kp UNDER               &kp LEFT_PARENTHESIS
+&trans  &trans    &trans   &trans    &trans     &trans    &trans    &trans  &trans                                             &trans                  &kp RIGHT_PARENTHESIS
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
