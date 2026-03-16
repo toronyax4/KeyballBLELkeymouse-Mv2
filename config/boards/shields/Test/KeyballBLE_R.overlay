@@ -22,14 +22,20 @@
         #input-processor-cells = <2>;
 
         /*
-         * 現在の keymap 全体（あなたが貼った版）を基準にした key position。
+         * 現在の keymap 全体を基準にした key position。
          * ここに入っている位置は、layer_5 が有効中でも解除しない。
          * それ以外のキーを押したら layer_5 を解除。
          *
          * layer_5 で意味を持たせている位置:
-         * HOME, MB4, UP, PAGE_UP, none, MB1, MB2-scroll, END, MB5, DOWN, PAGE_DOWN, LEFT, RIGHT
+         * MB4, HOME, UP, PAGE_UP,
+         * LEFT, MB1, MB2-scroll, RIGHT,
+         * MB5, END, DOWN, PAGE_DOWN
+         *
+         * 追加:
+         * 21 = LEFT_ARROW
+         * 24 = RIGHT_ARROW
          */
-        excluded-positions = <6 7 8 9 22 23 34 35 36 37 47 48>;
+        excluded-positions = <6 7 8 9 21 22 23 24 34 35 36 37 47 48>;
     };
 
     trackball_listener {
