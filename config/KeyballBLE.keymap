@@ -290,10 +290,10 @@ win_layer4_plus_equal: win_layer4_plus_equal {
 
         layer_4 {
             bindings = <
-&browser_zoom_in_strict  &excel_zoom_in   &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans                              &kp HOME        &mkp MB4        &kp UP_ARROW    &kp PAGE_UP            &trans  &trans
-&browser_zoom_out        &excel_zoom_out  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp BSPC  &trans    &trans          &kp DEL         &kp LEFT_ARROW  &mkp MB1        &mclk_or_scroll 5 MB2  &kp RIGHT_ARROW  &trans
-&browser_zoom_reset      &trans           &kp END         &trans          &kp PAGE_DOWN    &trans    &trans    &trans          &kp END         &mkp MB5        &kp DOWN_ARROW  &kp PAGE_DOWN          &trans  &trans
-&trans                   &trans           &trans          &trans          &trans           &trans    &trans    &trans          &trans                                                                 &trans  &trans
+&browser_zoom_in_strict  &excel_zoom_in   &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans                         &mkp MB4    &kp HOME        &kp UP_ARROW    &kp PAGE_UP            &trans  &trans
+&browser_zoom_out        &excel_zoom_out  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp BSPC  &trans    &trans     &kp DEL     &kp LEFT_ARROW  &mkp MB1        &mclk_or_scroll 5 MB2  &kp RIGHT_ARROW  &trans
+&browser_zoom_reset      &trans           &kp END         &trans          &kp PAGE_DOWN    &trans    &trans    &trans     &mkp MB5    &kp END         &kp DOWN_ARROW  &kp PAGE_DOWN          &trans  &trans
+&trans                   &trans           &trans          &trans          &trans           &trans    &trans    &trans     &trans                                                             &trans  &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -301,9 +301,9 @@ win_layer4_plus_equal: win_layer4_plus_equal {
 
         layer_5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                      &kp HOME   &mkp MB4         &kp UP_ARROW    &kp PAGE_UP            &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans                      &mkp MB4   &kp HOME         &kp UP_ARROW    &kp PAGE_UP            &trans           &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans     &kp LEFT_ARROW   &mkp MB1        &mclk_or_scroll 8 MB2  &kp RIGHT_ARROW  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &kp END    &mkp MB5         &kp DOWN_ARROW  &kp PAGE_DOWN          &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &mkp MB5   &kp END          &kp DOWN_ARROW  &kp PAGE_DOWN          &trans           &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans                                                             &trans           &trans
             >;
 
