@@ -246,10 +246,10 @@ win_layer4_plus_equal: win_layer4_plus_equal {
 
         default_layer {
             bindings = <
-&kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                                 &kp Y        &kp U  &kp I      &kp O    &kp P        &kp MINUS
-&kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LC(UP)     &kp H        &kp J  &kp K      &kp L    &lt 4 EQUAL  &kp SEMI
-&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &kp LC(LEFT)              &kp LC(RIGHT)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH    &mt RSHFT LBKT
-&kp LGUI    &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE   &lt 2 LANG2                 &lt 2 LANG1      &lt 3 ENTER                             &kp RALT     &mt LGUI RBKT
+&kp ESC     &kp Q      &kp W     &kp E   &kp R  &kp T                                                        &kp Y        &kp U  &kp I      &kp O    &kp P        &kp MINUS
+&kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G         &mclk_or_scroll 5 MCLK    &kp LC(UP)           &kp H        &kp J  &kp K      &kp L    &lt 4 EQUAL  &kp SEMI
+&kp LSHIFT  &kp Z      &kp X     &kp C   &kp V  &kp B         &mt LGUI LC(LEFT)         &mt RSHFT LC(RIGHT)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH    &mt RSHFT LBKT
+&kp LGUI    &kp LALT   &kp LGUI  &trans  &mo 6  &lt 3 SPACE   &lt 2 LANG2               &lt 2 LANG1          &lt 3 ENTER                             &kp RALT     &mt LGUI RBKT
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -257,10 +257,10 @@ win_layer4_plus_equal: win_layer4_plus_equal {
 
         layer_1 {
             bindings = <
-&kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P            &win_minus_under
-&kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LG(TAB)   &kp H        &kp J  &kp K      &kp L    &win_layer4_plus_equal 4 0  &win_colon_semi
-&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &kp LS(LA(TAB))           &kp LA(TAB)   &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH        &mt RSHFT RBKT
-&kp LCTRL   &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE   &lt 7 INT5                  &lt 7 INT4      &lt 3 ENTER                             &kp RALT         &mt LCTRL BSLH
+&kp ESC     &kp Q      &kp W     &kp E   &kp R  &kp T                                                       &kp Y        &kp U  &kp I      &kp O    &kp P                       &win_minus_under
+&kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G         &mclk_or_scroll 5 MCLK    &kp LG(TAB)         &kp H        &kp J  &kp K      &kp L    &win_layer4_plus_equal 4 0  &win_colon_semi
+&kp LSHIFT  &kp Z      &kp X     &kp C   &kp V  &kp B         &mt LCTRL LS(LA(TAB))     &mt RSHFT LA(TAB)   &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH                   &mt RSHFT RBKT
+&kp LCTRL   &kp LALT   &kp LGUI  &trans  &mo 6  &lt 3 SPACE   &lt 7 INT5                &lt 7 INT4          &lt 3 ENTER                             &kp RALT                    &mt LCTRL BSLH
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -290,10 +290,10 @@ win_layer4_plus_equal: win_layer4_plus_equal {
 
         layer_4 {
             bindings = <
-&browser_zoom_in_strict  &excel_zoom_in   &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans                              &kp HOME        &mkp MB4        &kp UP_ARROW    &kp PAGE_UP             &trans  &trans
-&browser_zoom_out        &excel_zoom_out  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp BSPC  &trans    &trans          &kp DEL         &none           &mkp MB1        &mclk_or_scroll 5 MB2  &trans  &trans
-&browser_zoom_reset      &trans           &kp END         &trans          &kp PAGE_DOWN    &trans    &trans    &trans          &kp END         &mkp MB5        &kp DOWN_ARROW  &kp PAGE_DOWN           &trans  &trans
-&trans                   &trans           &trans          &trans          &trans           &trans    &trans    &kp LEFT_ARROW  &kp RIGHT_ARROW                                                         &trans  &trans
+&browser_zoom_in_strict  &excel_zoom_in   &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans                              &kp HOME        &mkp MB4        &kp UP_ARROW    &kp PAGE_UP            &trans  &trans
+&browser_zoom_out        &excel_zoom_out  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp BSPC  &trans    &trans          &kp DEL         &kp LEFT_ARROW  &mkp MB1        &mclk_or_scroll 5 MB2  &kp RIGHT_ARROW  &trans
+&browser_zoom_reset      &trans           &kp END         &trans          &kp PAGE_DOWN    &trans    &trans    &trans          &kp END         &mkp MB5        &kp DOWN_ARROW  &kp PAGE_DOWN          &trans  &trans
+&trans                   &trans           &trans          &trans          &trans           &trans    &trans    &trans          &trans                                                                 &trans  &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -301,10 +301,10 @@ win_layer4_plus_equal: win_layer4_plus_equal {
 
         layer_5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                            &kp HOME   &mkp MB4  &kp UP_ARROW    &kp PAGE_UP    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans     &none     &mkp MB1        &mclk_or_scroll 8 MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &kp END    &mkp MB5  &kp DOWN_ARROW  &kp PAGE_DOWN  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp RIGHT_ARROW                                     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                      &kp HOME   &mkp MB4         &kp UP_ARROW    &kp PAGE_UP            &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans     &kp LEFT_ARROW   &mkp MB1        &mclk_or_scroll 8 MB2  &kp RIGHT_ARROW  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &kp END    &mkp MB5         &kp DOWN_ARROW  &kp PAGE_DOWN          &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans                                                             &trans           &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
