@@ -341,10 +341,10 @@
 
         layer_9 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                      &mkp MB4   &kp HOME         &kp UP_ARROW    &kp PAGE_UP            &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans     &kp LEFT_ARROW   &mkp MB1        &mclk_or_scroll 8 MB2  &kp RIGHT_ARROW  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &mkp MB5   &kp END          &kp DOWN_ARROW  &kp PAGE_DOWN          &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans                                                             &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans  &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
