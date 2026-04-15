@@ -26,12 +26,7 @@
          * ここに入っている位置は、layer_5 が有効中でも解除しない。
          * それ以外のキーを押したら layer_5 を解除。
          *
-         * layer_5 で意味を持たせている位置:
-         * MB4, HOME, UP, PAGE_UP,
-         * LEFT, MB1, MB2-scroll, RIGHT,
-         * MB5, END, DOWN, PAGE_DOWN
-         *
-         * 追加:
+         * 追加済み:
          * 21 = LEFT_ARROW
          * 24 = RIGHT_ARROW
          */
@@ -41,7 +36,25 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+        /*
+         * 通常時:
+         * - trackball movement で layer_5 を一時的に有効化
+         * - その後 XY scaler を適用
+         */
         input-processors = <&layer5_temp 5 800>, <&zip_xy_scaler 2 3>;
+
+        /*
+         * layer_9 が有効な間は automouse を無効化する。
+         * つまり temp-layer processor を使わず、
+         * XY scaler だけを適用する。
+         *
+         * これにより、トラックボールに触れても layer_5 が勝手に出ない。
+         */
+        automouse_off {
+            layers = <9>;
+            input-processors = <&zip_xy_scaler 2 3>;
+        };
     };
 };
 
