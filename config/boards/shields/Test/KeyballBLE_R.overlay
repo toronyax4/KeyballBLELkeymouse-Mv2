@@ -20,15 +20,15 @@
 / {
     layer5_temp: layer5_temp {
     gesture_keys_test: gesture_keys_test {
-        compatible = "zmk,input-processor-keybind";
-        #input-processor-cells = <0>;
-        track_remainders;
-        bindings = <&kp RIGHT>, <&kp LEFT>, <&kp UP>, <&kp DOWN>;
-        mode = <1>;
-        tick = <40>;
-        wait-ms = <0>;
-        tap-ms = <10>;
-    };
+    compatible = "zmk,input-processor-keybind";
+    #input-processor-cells = <0>;
+    track_remainders;
+    bindings = <&kp RIGHT_ARROW>, <&kp LEFT_ARROW>, <&kp UP_ARROW>, <&kp DOWN_ARROW>;
+    mode = <1>;
+    tick = <40>;
+    wait-ms = <0>;
+    tap-ms = <10>;
+};
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
 
