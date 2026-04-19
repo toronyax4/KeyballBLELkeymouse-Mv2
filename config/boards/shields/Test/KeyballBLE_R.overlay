@@ -29,7 +29,7 @@
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
-        bindings = <&mac_space_right>, <&mac_space_left>, <&mac_mission_control>, <&mac_app_switcher>;
+        bindings = <&mac_space_right>, <&mac_space_left>, <&mac_mission_control>, <&mac_app_expose>;
         mode = <1>;
         tick = <40>;
         wait-ms = <0>;
