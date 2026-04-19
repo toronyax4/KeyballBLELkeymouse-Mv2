@@ -30,7 +30,7 @@
 };
 
 / {
-    combos {
+        combos {
         compatible = "zmk,combos";
 
         double_quotation {
@@ -44,6 +44,22 @@
             timeout-ms = <50>;
             slow-release;
             layers = <4>;
+        };
+
+        j_lang1_app_switch_next {
+            bindings = <&kp TAB>;
+            key-positions = <21 47>;
+            timeout-ms = <90>;
+            slow-release;
+            layers = <0>;
+        };
+
+        j_enter_app_switch_prev {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <21 48>;
+            timeout-ms = <90>;
+            slow-release;
+            layers = <0>;
         };
     };
 
@@ -306,21 +322,7 @@
             bindings = <&mo>, <&win_plus_equal>;
         };
 
-        appswitch_next_or_lang1: appswitch_next_or_lang1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "APPSWITCH_NEXT_OR_LANG1";
-            #binding-cells = <0>;
-            bindings = <&lt 2 LANG1>, <&kp TAB>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-
-        appswitch_prev_or_enter: appswitch_prev_or_enter {
-            compatible = "zmk,behavior-mod-morph";
-            label = "APPSWITCH_PREV_OR_ENTER";
-            #binding-cells = <0>;
-            bindings = <&lt 3 ENTER>, <&kp LS(TAB)>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
+        
     };
 
     keymap {
