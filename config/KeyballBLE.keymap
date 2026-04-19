@@ -171,7 +171,7 @@
                 ;
         };
 
-        mac_mission_control: mac_mission_control {
+                mac_mission_control: mac_mission_control {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "MAC_MISSION_CONTROL";
@@ -182,14 +182,38 @@
                 ;
         };
 
-        mac_app_switcher: mac_app_switcher {
+        mac_app_expose: mac_app_expose {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            label = "MAC_APP_SWITCHER";
+            label = "MAC_APP_EXPOSE";
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp DOWN_ARROW>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        mac_app_switcher_next: mac_app_switcher_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "MAC_APP_SWITCHER_NEXT";
             bindings
                 = <&macro_press &kp LGUI>
                 , <&macro_tap &kp TAB>
                 , <&macro_release &kp LGUI>
+                ;
+        };
+
+        mac_app_switcher_prev: mac_app_switcher_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "MAC_APP_SWITCHER_PREV";
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_press &kp LGUI>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp LSHFT>
                 ;
         };
 
