@@ -25,16 +25,16 @@
         excluded-positions = <6 7 8 9 21 22 23 24 34 35 36 37 47 48>;
     };
 
-gesture_keys_test: gesture_keys_test {
-    compatible = "zmk,input-processor-keybind";
-    #input-processor-cells = <0>;
-    track_remainders;
-    bindings = <&kp RIGHT_ARROW>, <&kp LEFT_ARROW>, <&kp UP_ARROW>, <&kp DOWN_ARROW>;
-    mode = <1>;
-    tick = <40>;
-    wait-ms = <0>;
-    tap-ms = <10>;
-};
+    gesture_keys_test: gesture_keys_test {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings = <&mac_space_right>, <&mac_space_left>, <&mac_mission_control>, <&mac_app_switcher>;
+        mode = <1>;
+        tick = <40>;
+        wait-ms = <0>;
+        tap-ms = <10>;
+    };
 
     trackball_listener {
         compatible = "zmk,input-listener";
