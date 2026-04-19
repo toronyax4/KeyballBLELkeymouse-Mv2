@@ -249,7 +249,7 @@
         };
     };
 
-    behaviors {
+        behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -321,14 +321,12 @@
             quick-tap-ms = <0>;
             bindings = <&mo>, <&win_plus_equal>;
         };
-
-        
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-    　　        default_layer {
+        default_layer {
             bindings = <
 &kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                                 &kp Y        &kp U  &kp I      &kp O    &kp P        &kp MINUS
 &kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LC(UP)     &kp H        &mt LGUI J   &kp K      &kp L    &lt 4 EQUAL  &kp SEMI
@@ -338,6 +336,7 @@
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
+
         layer_1 {
             bindings = <
 &kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P            &win_minus_under
