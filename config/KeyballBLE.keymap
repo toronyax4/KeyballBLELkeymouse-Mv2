@@ -170,6 +170,50 @@
                 , <&macro_release &kp LGUI>
                 ;
         };
+
+        mac_mission_control: mac_mission_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "MAC_MISSION_CONTROL";
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp UP_ARROW>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        mac_app_switcher: mac_app_switcher {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "MAC_APP_SWITCHER";
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+
+        mac_space_left: mac_space_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "MAC_SPACE_LEFT";
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp LEFT_ARROW>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        mac_space_right: mac_space_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "MAC_SPACE_RIGHT";
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp RIGHT_ARROW>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
     };
 
     behaviors {
