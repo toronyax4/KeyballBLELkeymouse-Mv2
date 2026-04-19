@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/Dist16384
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: te9no
-      url-base: https://github.com/te9no
+    - name: zettaface
+      url-base: https://github.com/zettaface
 
   projects:
     - name: zmk
@@ -26,9 +26,9 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
-      
+
     - name: zmk-input-processor-keybind
-      remote: te9no
+      remote: zettaface
       revision: main
       path: modules/zmk-input-processor-keybind
 
