@@ -45,14 +45,6 @@
             slow-release;
             layers = <4>;
         };
-
-        kl_to_layer10 {
-            bindings = <&mo 10>;
-            key-positions = <22 23>;
-            timeout-ms = <200>;
-            slow-release;
-            layers = <0 1>;
-        };
     };
 
     macros {
@@ -318,12 +310,12 @@
     keymap {
         compatible = "zmk,keymap";
 
-                default_layer {
+        default_layer {
             bindings = <
-&kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                                       &kp Y           &kp U      &kp I      &kp O       &kp P        &kp MINUS
-&kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G       &mclk_or_scroll 5 MCLK    &kp LC(UP)           &kp H           &kp J      &kp K      &kp L       &lt 4 EQUAL  &kp SEMI
-&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &mt LGUI LC(LEFT)         &mt RSHFT LC(RIGHT)  &kp N           &kp M      &kp COMMA  &lt 10 DOT  &kp SLASH    &mt RSHFT LBKT
-&kp LGUI    &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE  &lt 2 LANG2               &lt 2 LANG1          &lt 3 ENTER                                       &kp RALT     &mt LGUI RBKT
+&kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                                 &kp Y        &kp U  &kp I          &kp O    &kp P        &kp MINUS
+&kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LC(UP)     &kp H        &kp J  &mt LGUI K    &lt 10 L  &lt 4 EQUAL  &kp SEMI
+&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &mt LGUI LC(LEFT)         &mt RSHFT LC(RIGHT)  &kp N        &kp M  &kp COMMA      &kp DOT  &kp SLASH    &mt RSHFT LBKT
+&kp LGUI    &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE   &lt 2 LANG2                 &lt 2 LANG1            &lt 3 ENTER                             &kp RALT     &mt LGUI RBKT
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -426,12 +418,12 @@
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
 
-        layer_10 {
+                layer_10 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                    &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans                  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans                  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &mac_app_switcher_prev  &mac_app_switcher_next                          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans        &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp LS(TAB)   &kp TAB                            &trans  &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
