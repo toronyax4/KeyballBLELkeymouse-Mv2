@@ -30,7 +30,7 @@
 };
 
 / {
-                    combos {
+                        combos {
         compatible = "zmk,combos";
 
         double_quotation {
@@ -50,7 +50,6 @@
             bindings = <&mo 10>;
             key-positions = <22 23>;
             timeout-ms = <250>;
-            require-prior-idle-ms = <80>;
             slow-release;
             layers = <0 1>;
         };
