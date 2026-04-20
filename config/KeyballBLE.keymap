@@ -46,9 +46,9 @@
             layers = <4>;
         };
 
-        jk_to_layer10 {
+        comma_dot_to_layer10 {
             bindings = <&mo 10>;
-            key-positions = <21 22>;
+            key-positions = <24 25>;
             timeout-ms = <200>;
             slow-release;
             layers = <0 1>;
