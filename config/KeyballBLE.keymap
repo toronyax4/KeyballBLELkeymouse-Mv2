@@ -30,7 +30,7 @@
 };
 
 / {
-                        combos {
+    combos {
         compatible = "zmk,combos";
 
         double_quotation {
@@ -46,10 +46,10 @@
             layers = <4>;
         };
 
-        kl_to_layer10 {
+        jk_to_layer10 {
             bindings = <&mo 10>;
-            key-positions = <22 23>;
-            timeout-ms = <250>;
+            key-positions = <21 22>;
+            timeout-ms = <200>;
             slow-release;
             layers = <0 1>;
         };
