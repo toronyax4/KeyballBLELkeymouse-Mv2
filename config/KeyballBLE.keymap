@@ -323,10 +323,10 @@
 
         layer_1 {
             bindings = <
-&kp ESC     &kp Q     &kp W     &kp E   &kp R  &kp T                                               &kp Y        &kp U  &kp I      &kp O    &kp P            &win_minus_under
-&kp TAB     &lt 4 A    &kp S     &kp D   &kp F  &kp G        &mclk_or_scroll 5 MCLK    &kp LG(TAB)   &kp H        &kp J  &kp K      &kp L    &win_layer4_plus_equal 4 0  &win_colon_semi
-&kp LSHIFT  &kp Z     &kp X     &kp C   &kp V  &kp B        &mt LCTRL LS(LA(TAB))     &mt RSHFT LA(TAB)   &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH        &mt RSHFT RBKT
-&kp LCTRL   &kp LALT  &kp LGUI  &trans  &mo 6  &lt 3 SPACE   &lt 7 INT5                  &lt 7 INT4      &lt 3 ENTER                             &kp RALT         &mt LCTRL BSLH
+&kp ESC     &kp Q         &kp W     &kp E     &kp R  &kp T                                     &kp Y         &kp U  &kp I      &kp O    &kp P                       &win_minus_under
+&kp TAB     &lt 4 A       &kp S     &kp D     &kp F  &kp G         &none         &kp LG(TAB)   &kp H         &kp J  &kp K      &kp L    &win_layer4_plus_equal 4 0  &win_colon_semi
+&kp LSHIFT  &mt LSHIFT Z  &kp X     &kp C     &kp V  &kp B         &none         &none         &kp N         &kp M  &kp COMMA  &kp DOT  &kp SLASH                   &mt RSHFT RBKT
+&kp LCTRL   &kp LCTRL     &kp LALT  &kp LGUI  &mo 6  &lt 3 SPACE   &lt 7 INT5    &lt 7 INT4    &lt 3 ENTER                              &kp RALT                    &mt LCTRL BSLH
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
