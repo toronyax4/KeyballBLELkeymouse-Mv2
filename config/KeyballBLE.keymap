@@ -323,10 +323,10 @@
 
         layer_1 {
             bindings = <
-&kp ESC     &kp Q         &kp W     &kp E     &kp R  &kp T                                                 &kp Y        &kp U         &kp I        &kp O       &kp P        &win_minus_under
-&kp TAB     &lt 4 A       &kp S     &kp D     &kp F  &kp G         &mclk_or_scroll 5 MCLK    &none         &kp H        &mt RSHFT J   &mt LGUI K   &lt 10 L    &lt 4 EQUAL  &kp SEMI
-&kp LSHIFT  &mt LSHIFT Z  &kp X     &kp C     &kp V  &kp B         &none                     &none         &kp N        &mt LCTRL M   &kp COMMA    &lt 11 DOT  &kp SLASH    &mt RSHFT LBKT
-&kp LCTRL   &kp LCTRL     &kp LALT  &kp LWIN  &mo 6  &lt 3 SPACE   &lt 2 LANG2               &lt 2 LANG1   &lt 3 ENTER                                         &kp RALT     &mt LCTRL RBKT
+&kp ESC     &kp Q         &kp W     &kp E     &kp R  &kp T                                                &kp Y        &kp U        &kp I      &kp O    &kp P        &kp MINUS
+&kp TAB     &lt 4 A       &kp S     &kp D     &kp F  &kp G         &mclk_or_scroll 5 MCLK   &none         &kp H        &mt RSHFT J  &kp K      &kp L    &lt 4 EQUAL  &kp SEMI
+&kp LSHIFT  &mt LSHIFT Z  &kp X     &kp C     &kp V  &kp B         &none                    &none         &kp N        &mt LGUI M   &kp COMMA  &kp DOT  &kp SLASH    &mt RSHFT RBKT
+&kp LCTRL   &kp LCTRL     &kp LALT  &kp LGUI  &mo 6  &lt 3 SPACE   &lt 7 INT5               &lt 7 INT4    &lt 3 ENTER                                   &kp RALT     &mt LCTRL BSLH
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -387,10 +387,10 @@
 
         layer_7 {
             bindings = <
-&trans  &trans      &trans      &trans    &trans       &trans                      &trans   &trans       &trans         &trans           &win_screenshot_tool  &trans
-&trans  &kp EXCL    &kp LS(N2)  &kp HASH  &kp DLLR     &kp BSPC  &trans    &trans  &kp DEL  &kp PERCENT  &kp LS(N6)     &kp LS(N7)       &kp LBKT              &kp LS(EQUAL)
-&trans  &trans      &trans      &trans    &kp LS(LBKT) &trans    &trans    &trans  &trans   &kp EQUAL    &kp LS(INT3)   &kp KP_MULTIPLY  &kp LS(INT1)          &kp LS(N8)
-&trans  &trans      &trans      &trans    &trans       &trans    &trans    &trans  &trans                                                &trans                &kp LS(N9)
+&trans  &trans     &trans    &trans    &trans       &trans                      &trans   &trans       &trans         &trans           &win_screenshot_tool  &trans
+&trans  &kp EXCL   &kp DQT   &kp HASH  &kp DLLR     &kp BSPC  &trans    &trans  &kp DEL  &kp PERCENT  &kp AMPERSAND  &kp SQT          &kp AT_SIGN           &kp TILDE
+&trans  &trans     &trans    &trans    &kp GRAVE    &trans    &trans    &trans  &trans   &kp CARET    &kp PIPE       &kp ASTERISK     &kp UNDER             &kp LEFT_PARENTHESIS
+&trans  &trans     &trans    &trans    &trans       &trans    &trans    &trans  &trans                                                &trans                &kp RIGHT_PARENTHESIS
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
